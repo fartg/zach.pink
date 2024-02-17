@@ -6,6 +6,35 @@
 
 import text from "./text";
 
+//thank you so much to gauravadhikari1997!
+export function syntaxHighlight(json) {
+  if (!json) return ""; //no JSON from response
+
+  json = json
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+  return json.replace(
+    /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
+    function (match) {
+      var cls = "number";
+      if (/^"/.test(match)) {
+        if (/:$/.test(match)) {
+          cls = "key";
+        } else {
+          cls = "string";
+        }
+      } else if (/true|false/.test(match)) {
+        cls = "boolean";
+      } else if (/null/.test(match)) {
+        cls = "null";
+      }
+      return '<span class="' + cls + '">' + match + "</span>";
+    }
+  );
+}
+
+
 export default function Home() {
   return (
     <main className = "flex min-h-screen flex-col items-center p-5 ">
@@ -32,8 +61,6 @@ export default function Home() {
 
           </div>
 
-          
-
           {/* then the right side (minimize, maximize, close) */}
           <div className = "flex text-2xl gap-3">
             <text className = "text-center pt-0.5 w-10 h-full hover:bg-[#3E3E3E]">─</text>
@@ -59,18 +86,23 @@ export default function Home() {
             {
             Object.keys(text).map((element) => {
               return (
+
               <text key = {element}>
-                {"PS C:\\Users\\Zach\\zach.pink> "} {"cat "+ element + ".json"}
-              <pre>
-                {JSON.stringify(text[element], null, 2)}
-              </pre>
-              <br/><br/>
+                {"PS C:\\Users\\Zach\\zach.pink> "}
+                <text className="string">cat </text>
+                {element}
+                <pre
+                dangerouslySetInnerHTML={{
+                  __html: syntaxHighlight(JSON.stringify(text[element], undefined, 2))
+                }}/>
+
+                <br/><br/>
+
               </text>
+
               )
-    
             })
             }
-
 
             <br/>
 

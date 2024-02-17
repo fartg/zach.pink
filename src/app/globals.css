@@ -52,6 +52,22 @@
    height: 40px;
 }
 
+.string {
+  color: rgb(194, 97, 134);
+}
+.number {
+  color: rgb(194, 97, 134);
+}
+.boolean {
+  color: blue;
+}
+.null {
+  color: magenta;
+}
+.key {
+  color: rgb(255, 255, 255);
+}
+
 body {
   background-color: #6F6F6F;
 }
