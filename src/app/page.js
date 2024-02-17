@@ -90,7 +90,7 @@ export default function Home() {
               <text key = {element}>
                 {"PS C:\\Users\\Zach\\zach.pink> "}
                 <text className="string">cat </text>
-                {element}
+                {element}.json
                 <pre
                 dangerouslySetInnerHTML={{
                   __html: syntaxHighlight(JSON.stringify(text[element], undefined, 2))
