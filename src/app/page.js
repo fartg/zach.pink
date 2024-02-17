@@ -18,7 +18,7 @@ export default function Home() {
 
           {/* left side first (powershell logo and text) */}
 
-          <div className="powershell flex h-64 -mt-0.5 overflow-hidden">
+          <div className = "powershell flex h-64 -mt-0.5 overflow-hidden">
 
             <text className="powershell-inner flex gap-x-2 ml-2 rounded-lg h-10 text-xs">
               <img alt="Powershell Icon" src = "/PowerShell_5.0_icon.png" className="powershell-icon ml-3 mt-1.5"/>
@@ -35,6 +35,11 @@ export default function Home() {
           
 
           {/* then the right side (minimize, maximize, close) */}
+          <div className = "flex text-2xl gap-3">
+            <text className = "text-center pt-0.5 w-10 h-full hover:bg-[#3E3E3E]">─</text>
+            <text className = "text-center w-10  h-full hover:bg-[#3E3E3E]">□</text>
+            <text className = "text-center pt-0.5 w-10 h-full hover:bg-[#C42B1C]">✕</text>
+          </div>
 
         </div>
 
