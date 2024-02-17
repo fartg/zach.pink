@@ -8,7 +8,7 @@ import text from "./text";
 
 export default function Home() {
   return (
-    <main className = "flex min-h-screen flex-col items-center p-24 ">
+    <main className = "flex min-h-screen flex-col items-center p-10 ">
       <div className = "console rounded-md border border-rose-500 ">
 
         {/*let's initialize the title bar with our text & buttons here*/}
