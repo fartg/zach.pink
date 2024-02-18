@@ -4,7 +4,6 @@
   Purpose: Recreate zach.pink into a terminal environment that looks good!
 */
 
-import text from "./text";
 import buttons from "./buttons";
 import powershell from "./powershell";
 import console from './console'
