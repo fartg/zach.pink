@@ -23,6 +23,7 @@
   width: 100%;
   height: 80vh;
   overflow: hidden;
+  box-shadow: 0 0 5px 2px #000000;
 }
 
 .console-inner {
@@ -50,6 +51,15 @@
 .console-title {
    background-color: #333333;
    height: 40px;
+}
+
+.footer {
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  color: rgb(255, 255, 255);
 }
 
 .string {

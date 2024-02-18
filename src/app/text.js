@@ -6,8 +6,11 @@ const text = {
         employment: "Under Contract",
         loves: ["🐱 Cats", "💻 Coding"]
     },
+    contact: {
+        email: ["me@zach.pink", "zachm@tuta.com"]
+    },
     socials: {
-        twitter: {
+        x: {
             user: "@passion",
             link: "x.com/passion"
         },
@@ -24,7 +27,7 @@ const text = {
         "2024 -> Now": {
             employer: "Contract work",
             contractor: "Dell",
-            duties: ["Hardware installation", "Customer support", "Helpdesk"]
+            duties: ["Hardware installation, deployment & configuration", "Customer support", "Helpdesk"]
         }
     },
     projects: {

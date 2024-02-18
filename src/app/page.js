@@ -11,7 +11,7 @@ import console from './console'
 export default function Home() {
   return (
     <main className = "flex min-h-screen flex-col items-center p-5 ">
-      <div className = "console rounded-md border border-rose-500 ">
+      <div className = "console rounded-md border border-rose-500">
 
         {/*let's initialize the title bar with our text & buttons here*/}
 
@@ -34,13 +34,19 @@ export default function Home() {
 
           {/* let's now initialize the console inner with our auto-generating text */}
 
-          <div className="console-inner font-console">
-            {console.Init()}
+        <div className="console-inner font-console">
+          {console.Init()}
 
-            {console.Populate()}
+          {console.Populate()}
 
-            {console.Footer()}
-          </div>
+          {console.Footer()}
+        </div>
+      </div>
+
+      <div className = "footer">
+        Made with ❤️ by Zach M
+        <br/>
+        <text className = "text-sm">🐱</text>
       </div>
     </main>
   );

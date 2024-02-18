@@ -1,7 +1,14 @@
+import { ReactTyped } from "react-typed";
 import { syntaxHighlight } from "./syntax_highlight";
 import text from "./text";
 
 let console = {};
+
+console.highlightAndSanitize = function(element) {
+  let sanitized = syntaxHighlight(JSON.stringify(text[element], undefined, 2))
+  
+  return sanitized;
+}
 
 console.createLine = function(element) {
     return (
@@ -9,11 +16,8 @@ console.createLine = function(element) {
           {"PS C:\\Users\\Zach\\zach.pink> "}
           <text className="string">cat </text>
           {element}.json
-          <pre
-          dangerouslySetInnerHTML={{
-            __html: syntaxHighlight(JSON.stringify(text[element], undefined, 2))
-          }}/>
-          <br/><br/>
+          <pre dangerouslySetInnerHTML={{ __html: this.highlightAndSanitize(element)}}/>
+          <br/>
         </text>
         )
 }
@@ -40,11 +44,7 @@ console.Populate = function() {
 console.Footer = function () {
   return (
     <div>
-      Testing
-      <br/><br/>
-      this
-      <br/><br/>
-      Thing.
+    {"PS C:\\Users\\Zach\\zach.pink>  "}
     </div>
   )
 }
