@@ -34,7 +34,6 @@ export function syntaxHighlight(json) {
   );
 }
 
-
 export default function Home() {
   return (
     <main className = "flex min-h-screen flex-col items-center p-5 ">
@@ -105,7 +104,6 @@ export default function Home() {
             }
 
             <br/>
-
           </div>
       </div>
     </main>
