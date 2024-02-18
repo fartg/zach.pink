@@ -1,4 +1,3 @@
-import { ReactTyped } from "react-typed";
 import { syntaxHighlight } from "./syntax_highlight";
 import text from "./text";
 
