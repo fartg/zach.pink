@@ -18,7 +18,7 @@ _console.Init = function() {
       <br/><br/>
       Install the lastest PowerShell for new features and improvements! https://aka.ms/PSWindows
       <br/><br/>
-      (type "help" if you're confused)
+      (Try typing "help")
       <br/><br/>
     </div>
   )
