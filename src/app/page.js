@@ -79,6 +79,7 @@ export default function Home() {
           {/* This is where the console history goes */}
           <div ref = {consoleState}/>
 
+          {/* This is where our typing indicator goes */}
           <div>
             <br/>
             {"PS C:\\Users\\Zach\\zach.pink> "}{keyString}
