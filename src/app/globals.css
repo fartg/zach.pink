@@ -36,16 +36,6 @@
   width: 98.5%;
 }
 
-.console-text {
-  background-color: #0C0C0C;
-  color: #ffffff;
-  height: 20px;
-  border: none;
-  background-color: transparent;
-  resize: none;
-  outline: none;
-}
-
 .powershell {
    flex-direction: row;
    flex-wrap: wrap;
