@@ -91,6 +91,8 @@ export default function Home() {
       <div className = "footer">
         Made with ❤️ by Zach M
         <br/>
+        <a href="https://github.com/fartg/zach.pink" target="null">Source</a>
+        <br/>
         <text className = "text-sm">🐱</text>
       </div>
     </main>
