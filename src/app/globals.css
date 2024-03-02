@@ -29,8 +29,21 @@
 .console-inner {
   margin-top: 10px;
   margin-left: 15px;
+  color: #ffffff;
+  background-color: #0C0C0C;
   overflow: scroll;
   height: 75vh;
+  width: 98.5%;
+}
+
+.console-text {
+  background-color: #0C0C0C;
+  color: #ffffff;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
 }
 
 .powershell {

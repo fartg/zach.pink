@@ -1,51 +1,50 @@
 import { syntaxHighlight } from "./syntax_highlight";
 import text from "./text";
 
-let console = {};
+let _console = {};
 
-console.highlightAndSanitize = function(element) {
+_console.highlightAndSanitize = function(element) {
   let sanitized = syntaxHighlight(JSON.stringify(text[element], undefined, 2))
   
   return sanitized;
 }
 
-console.createLine = function(element) {
-    return (
-        <text key = {element}>
-          {"PS C:\\Users\\Zach\\zach.pink> "}
-          <text className="string">cat </text>
-          {element}.json
-          <pre dangerouslySetInnerHTML={{ __html: this.highlightAndSanitize(element)}}/>
-          <br/>
-        </text>
-        )
-}
-
-console.Init = function() {
+_console.Init = function() {
   return (
     <div>
-      Windows PowerShell 
+      Windows PowerShell
       <br/>
       Copyright (C) Microsoft Corporation. All rights reserved.
       <br/><br/>
       Install the lastest PowerShell for new features and improvements! https://aka.ms/PSWindows
       <br/><br/>
+      (try "ls" or "cat about_me.json")
+      <br/><br/>
     </div>
   )
 }
 
-console.Populate = function() {
+
+_console.clearConsole = async function(console_ref) {
+  if(!console_ref.current) return;
+  console_ref.current.innerHTML = "";
+}
+
+_console.writeLn = async function(console_ref, line) {
+  if(!console_ref.current) return;
+  console_ref.current.innerHTML += line + "<br/>";
+}
+
+_console.write = async function(console_ref, line) {
+  if(!console_ref.current) return;
+  console_ref.current.innerHTML += line;
+}
+
+_console.Populate = function() {
   return Object.keys(text).map((element) => {
-    return console.createLine(element);
+    return _console.createLine(element);
   })
 }
 
-console.Footer = function () {
-  return (
-    <div>
-    {"PS C:\\Users\\Zach\\zach.pink>  "}
-    </div>
-  )
-}
 
-export default console;
+export default _console;
