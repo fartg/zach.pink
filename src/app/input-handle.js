@@ -3,8 +3,21 @@ import text from "./text";
 import { syntaxHighlight } from "./syntax_highlight";
 import _console from "./console";
 
-const command = {
+let command = {
+    ["help"]: {
+        alias: "help",
+        description: "Displays this window.",
+        func: function(ref) {
+            let help_storage = "";
+
+            for(var i in command) help_storage += (command[i].alias + " | " + command[i].description + "<br/>")
+
+            return help_storage
+        }
+    },
     ["ls"]: {
+        alias: "ls",
+        description: "Lists files in current directory.",
         func: function(ref) { 
             const test = [];
 
@@ -16,16 +29,22 @@ const command = {
         }
     },
     ["test"]: {
+        alias: "test",
+        description: "A test command.",
         func: function(ref) {
             return "testing Asdf"
         }
     },
     ["cls"]: {
+        alias: "cls",
+        description: "Clears the console.",
         func: function(ref) {
             _console.clearConsole(ref);
         }
     },
     ["cat"]: {
+        alias: "cat",
+        description: "Reads a file in current directory.",
         func: function(ref, params) {
             const cat = text[params[0].slice(0, -5)];
 

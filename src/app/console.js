@@ -18,7 +18,7 @@ _console.Init = function() {
       <br/><br/>
       Install the lastest PowerShell for new features and improvements! https://aka.ms/PSWindows
       <br/><br/>
-      (try "ls" or "cat about_me.json")
+      (type "help" if you're confused)
       <br/><br/>
     </div>
   )

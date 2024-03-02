@@ -17,15 +17,17 @@ export default function Home() {
   const consoleState = useRef(null);
   const [keyString, setKeyString] = useState('');
   useEffect(() => {
-
+    //I'll change this to be a textbox event instead when I get drunk
     const handleKeyDown = (event) => {
+
+      //Thanks chatgpt
       const excludedKeys = ['Shift', 'Tab', 'Alt', 'CapsLock', ...Array.from({length: 12}, (_, i) => `F${i + 1}`), 'Control', 'Escape', "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
       var pattern = /^[0-9!@#$%^&*()\=\[\]{};':"\\|,<>\/?]*$/;
 
-      if (pattern.test(event.key)) return;
-      
+      if (pattern.test(event.key)) return
       if (excludedKeys.includes(event.key)) return;
 
+      //Do you like my awesome backspace functionality
       if (event.key === "Backspace") {
         return setKeyString(prevKeyString => prevKeyString.slice(0, -1));
       }
