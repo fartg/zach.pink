@@ -1,5 +1,6 @@
 ## zach.pink
 
+![image](https://github.com/fartg/zach.pink/assets/70608092/705410e9-7bd7-4e33-b372-cd9860401997)
 
 ## A powershell "emulator" made in Next.js and Tailwind CSS
 
