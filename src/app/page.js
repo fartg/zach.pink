@@ -12,10 +12,12 @@ import powershell from "./powershell";
 import _console from './console'
 import inputHandle from "./input-handle";
 
-
 export default function Home() {
   const consoleState = useRef(null);
+  const mobileTextFocus = useRef(null);
+
   const [keyString, setKeyString] = useState('');
+
   useEffect(() => {
     //I'll change this to be a textbox event instead when I get drunk
     const handleKeyDown = (event) => {
@@ -82,7 +84,7 @@ export default function Home() {
           {/* This is where our typing indicator goes */}
           <div>
             <br/>
-            {"PS C:\\Users\\Zach\\zach.pink> "}{keyString}
+            {"PS C:\\Users\\Zach\\zach.pink> "}{keyString}<textarea ref={mobileTextFocus} autoFocus className="console-text outline-none"readOnly={true}></textarea>
           </div>
 
         </div>
