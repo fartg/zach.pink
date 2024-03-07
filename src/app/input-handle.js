@@ -62,7 +62,8 @@ export default function inputHandle (ref, text)  {
     const cmd = text_array[0];
 
     // grab params
-    const params = text_array.shift();
+    text_array.shift();
+    const params = text_array;
 
     if(command[cmd]) {
         let command_reply = command[cmd].func(ref, params);
