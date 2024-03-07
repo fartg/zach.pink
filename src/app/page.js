@@ -21,10 +21,12 @@ export default function Home() {
 
   useEffect(() => {
     //I'll change this to be a textbox event instead when I get drunk
+    //edit: I got drunk and figured out a better way to handle mobile, see:
+    //<textarea ref={mobileTextFocus} ...
     const handleKeyDown = (event) => {
 
       //Thanks chatgpt
-      const excludedKeys = ['Shift', 'Tab', 'Alt', 'CapsLock', ...Array.from({length: 12}, (_, i) => `F${i + 1}`), 'Control', 'Escape', "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
+      const excludedKeys = ['Meta', 'Shift', 'Tab', 'Alt', 'CapsLock', ...Array.from({length: 12}, (_, i) => `F${i + 1}`), 'Control', 'Escape', "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
       var pattern = /^[0-9!@#$%^&*()\=\[\]{};':"\\|,<>\/?]*$/;
 
       if (pattern.test(event.key)) return

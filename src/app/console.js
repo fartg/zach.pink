@@ -1,13 +1,4 @@
-import { syntaxHighlight } from "./syntax_highlight";
-import text from "./text";
-
 let _console = {};
-
-_console.highlightAndSanitize = function(element) {
-  let sanitized = syntaxHighlight(JSON.stringify(text[element], undefined, 2))
-  
-  return sanitized;
-}
 
 _console.Init = function() {
   return (
@@ -24,7 +15,6 @@ _console.Init = function() {
   )
 }
 
-
 _console.clearConsole = async function(console_ref) {
   if(!console_ref.current) return;
   console_ref.current.innerHTML = "";
@@ -39,12 +29,5 @@ _console.write = async function(console_ref, line) {
   if(!console_ref.current) return;
   console_ref.current.innerHTML += line;
 }
-
-_console.Populate = function() {
-  return Object.keys(text).map((element) => {
-    return _console.createLine(element);
-  })
-}
-
 
 export default _console;

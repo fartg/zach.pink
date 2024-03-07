@@ -10,9 +10,9 @@ let command = {
         func: function(ref) {
             let help_storage = "";
 
-            for(var i in command) help_storage += (command[i].alias + " | " + command[i].description + "<br/>")
+            for(var i in command) help_storage += (command[i].alias + " | " + command[i].description + "<br/>");
 
-            return help_storage
+            return help_storage;
         }
     },
     ["ls"]: {
@@ -62,8 +62,7 @@ export default function inputHandle (ref, text)  {
     const cmd = text_array[0];
 
     // grab params
-    text_array.shift();
-    const params = text_array;
+    const params = text_array.shift();
 
     if(command[cmd]) {
         let command_reply = command[cmd].func(ref, params);
